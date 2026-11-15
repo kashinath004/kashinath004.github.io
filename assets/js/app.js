@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFiltering();
   initModals();
   initToastActions();
+  initNavigation();
 });
 
 /* ==========================================================================
@@ -270,4 +271,89 @@ function initToastActions() {
       });
     });
   });
+}
+
+/* ==========================================================================
+   4. DYNAMIC NAVIGATION & ACTIVE INDICATOR (SCROLLSPY)
+   ========================================================================== */
+function initNavigation() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  if (!navLinks.length) return;
+
+  let isManualScroll = false;
+  let scrollTimeout = null;
+
+  function setActiveLink(activeNav) {
+    navLinks.forEach(link => {
+      const dot = link.querySelector('.nav-dot');
+      if (link.dataset.nav === activeNav) {
+        link.classList.add('text-cyan-400');
+        link.classList.remove('text-slate-300');
+        if (dot) dot.classList.remove('hidden');
+      } else {
+        link.classList.remove('text-cyan-400');
+        link.classList.add('text-slate-300');
+        if (dot) dot.classList.add('hidden');
+      }
+    });
+  }
+
+  // Smooth scroll and immediate active state on click
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          e.preventDefault();
+          isManualScroll = true;
+          setActiveLink(link.dataset.nav);
+
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+
+          if (history.pushState) {
+            history.pushState(null, null, targetId);
+          }
+
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            isManualScroll = false;
+          }, 800);
+        }
+      }
+    });
+  });
+
+  // ScrollSpy with IntersectionObserver
+  const sections = [
+    { id: 'hero', nav: 'about' },
+    { id: 'about', nav: 'about' },
+    { id: 'showcase', nav: 'showcase' },
+    { id: 'skills', nav: 'skills' },
+    { id: 'education', nav: 'education' },
+    { id: 'resume', nav: 'resume' }
+  ];
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (isManualScroll) return;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const match = sections.find(s => s.id === entry.target.id);
+          if (match) {
+            setActiveLink(match.nav);
+          }
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '-25% 0px -65% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(s => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+  }
 }

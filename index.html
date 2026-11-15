@@ -80,14 +80,27 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
-        <a href="#core-competencies" class="hover:text-cyan-400 transition flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Philosophy
+      <nav id="desktop-nav" class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <a href="#about" class="nav-link flex items-center gap-1.5 text-cyan-400 hover:text-cyan-400 transition" data-nav="about">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span>About</span>
         </a>
-        <a href="#showcase" class="hover:text-cyan-400 transition">Projects</a>
-        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
-        <a href="#education" class="hover:text-cyan-400 transition">Timeline</a>
-        <a href="#resume" class="hover:text-cyan-400 transition">Resume</a>
+        <a href="#showcase" class="nav-link flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition" data-nav="showcase">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] hidden"></span>
+          <span>Projects</span>
+        </a>
+        <a href="#skills" class="nav-link flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition" data-nav="skills">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] hidden"></span>
+          <span>Skills</span>
+        </a>
+        <a href="#education" class="nav-link flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition" data-nav="education">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] hidden"></span>
+          <span>Timeline</span>
+        </a>
+        <a href="#resume" class="nav-link flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition" data-nav="resume">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] hidden"></span>
+          <span>Resume</span>
+        </a>
       </nav>
 
       <!-- Action Buttons -->
@@ -170,9 +183,10 @@
   </section>
 
   <!-- =========================================================================
-       CORE PHILOSOPHY & COMPETENCIES SECTION
+       ABOUT & CORE COMPETENCIES SECTION
        ========================================================================= -->
-  <section id="core-competencies" class="py-20 relative bg-gradient-to-b from-[#070a12] via-[#0b1020] to-[#070a12] border-y border-white/10">
+  <section id="about" class="py-20 relative bg-gradient-to-b from-[#070a12] via-[#0b1020] to-[#070a12] border-y border-white/10">
+    <span id="core-competencies" class="absolute -top-24"></span>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
