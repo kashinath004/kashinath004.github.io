@@ -356,4 +356,53 @@ function initNavigation() {
       if (el) observer.observe(el);
     });
   }
+
+  // Footer: Back to Top
+  const backToTopBtn = document.getElementById('footer-back-to-top');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      isManualScroll = true;
+      setActiveLink('about');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (history.pushState) {
+        history.pushState(null, null, '#hero');
+      }
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isManualScroll = false;
+      }, 800);
+    });
+  }
+
+  // Footer: Featured Projects
+  const footerProjectsBtn = document.getElementById('footer-featured-projects');
+  if (footerProjectsBtn) {
+    footerProjectsBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const showcaseSec = document.getElementById('showcase');
+      if (showcaseSec) {
+        isManualScroll = true;
+        setActiveLink('showcase');
+        showcaseSec.scrollIntoView({ behavior: 'smooth' });
+        if (history.pushState) {
+          history.pushState(null, null, '#showcase');
+        }
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isManualScroll = false;
+        }, 800);
+      }
+    });
+  }
+
+  // Footer: Download CV Toast Feedback
+  const footerDownloadCv = document.getElementById('footer-download-cv');
+  if (footerDownloadCv) {
+    footerDownloadCv.addEventListener('click', () => {
+      if (typeof showToast === 'function') {
+        showToast('Opening Resume (PDF)...');
+      }
+    });
+  }
 }
