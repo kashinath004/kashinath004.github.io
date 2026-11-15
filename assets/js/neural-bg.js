@@ -1,5 +1,5 @@
 /**
- * Neuromorphic Synaptic Canvas Background
+ * Bio-Inspired Neural Synaptic Canvas Background
  * Simulates biological neurons, axon branching, and dynamic action potential propagation.
  * Created for Kashinath B R Portfolio
  */

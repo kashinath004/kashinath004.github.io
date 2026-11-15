@@ -55,16 +55,16 @@ function initProjectFiltering() {
 const PROJECT_MODAL_DATA = {
   cisnn: {
     title: "Optimization & Parallelization of Cerebellum Inspired Spiking Neural Network (CISNN)",
-    tag: "Neuromorphic AI & Biophysical Modeling",
+    tag: "Bio-Inspired AI & Neural Modeling",
     period: "Jan 2025 – Jun 2025",
     organization: "Amrita Mind Brain Center (AMBC)",
-    badge: "Flagship Research Project",
+    badge: "Flagship Academic Project",
     summary: "Developed biophysical Spiking Neural Network (CISNN) models in MATLAB and Python for high-fidelity sensory-motor perception. Parallelized computation using multiprocessing & vectorized LIF equations, achieving 35x energy efficiency and sub-millisecond inference over conventional CNN/LSTM baselines.",
-    industryImpact: "Directly applicable to autonomous agent execution loops, low-latency streaming inference, and ultra-efficient edge AI deployment. Neuromorphic sparse coding reduces computational overhead and power consumption in asynchronous continuous perception tasks.",
-    techStack: ["MATLAB", "Python", "NumPy", "Scikit-Learn", "Matplotlib", "Parallel Computing", "LIF Neurons", "STDP Plasticity"],
+    industryImpact: "Directly applicable to autonomous agent execution loops, low-latency streaming inference, and ultra-efficient edge AI deployment. Bio-inspired sparse coding reduces computational overhead and compute power in continuous perception tasks.",
+    techStack: ["MATLAB", "Python", "NumPy", "Scikit-Learn", "Matplotlib", "Parallel Computing", "Neural Networks", "Biological Modeling"],
     highlights: [
       "Engineered multi-compartment cerebellar microcircuits: Mossy Fibers, Granule Cells, Purkinje Cells, and DCN.",
-      "Vectorized Leaky Integrate-and-Fire (LIF) and Izhikevich dynamical formulations in Python/NumPy.",
+      "Vectorized Leaky Integrate-and-Fire (LIF) and dynamical formulations in Python/NumPy.",
       "Benchmarked alongside CNN, MLP, LSTM, SOM, and SVM for sensorimotor pattern classification.",
       "Achieved 91.4% network activation sparsity, minimizing redundant weight updates and compute overhead."
     ]
@@ -354,55 +354,6 @@ function initNavigation() {
     sections.forEach(s => {
       const el = document.getElementById(s.id);
       if (el) observer.observe(el);
-    });
-  }
-
-  // Footer: Back to Top
-  const backToTopBtn = document.getElementById('footer-back-to-top');
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      isManualScroll = true;
-      setActiveLink('about');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (history.pushState) {
-        history.pushState(null, null, '#hero');
-      }
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        isManualScroll = false;
-      }, 800);
-    });
-  }
-
-  // Footer: Featured Projects
-  const footerProjectsBtn = document.getElementById('footer-featured-projects');
-  if (footerProjectsBtn) {
-    footerProjectsBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const showcaseSec = document.getElementById('showcase');
-      if (showcaseSec) {
-        isManualScroll = true;
-        setActiveLink('showcase');
-        showcaseSec.scrollIntoView({ behavior: 'smooth' });
-        if (history.pushState) {
-          history.pushState(null, null, '#showcase');
-        }
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          isManualScroll = false;
-        }, 800);
-      }
-    });
-  }
-
-  // Footer: Download CV Toast Feedback
-  const footerDownloadCv = document.getElementById('footer-download-cv');
-  if (footerDownloadCv) {
-    footerDownloadCv.addEventListener('click', () => {
-      if (typeof showToast === 'function') {
-        showToast('Opening Resume (PDF)...');
-      }
     });
   }
 }

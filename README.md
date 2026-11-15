@@ -1,17 +1,17 @@
 # Kashinath B R — Professional Portfolio & Showcase
-### 2nd Year M.Sc. Bioinformatics Student (Class of 2027) &bull; Amrita Vishwa Vidyapeetham
+### 2nd Year M.Sc. Bioinformatics Student &bull; Computational Biologist & Aspiring AI Engineer &bull; Amrita Vishwa Vidyapeetham
 
-A sleek, modern, high-impact **Personal Portfolio and Dribbble/Behance-style Project Showcase Website** engineered for **Kashinath B R** (2nd Year M.Sc. Bioinformatics & B.Sc. Microbiology, Amrita Vishwa Vidyapeetham). Built with clean web standards, responsive glassmorphism, editorial project showcases, and verified academic credentials.
+A sleek, modern, high-impact **Personal Portfolio and Project Showcase Website** engineered for **Kashinath B R** (2nd Year M.Sc. Bioinformatics & B.Sc. Microbiology, Amrita Vishwa Vidyapeetham). Built with clean web standards, responsive glassmorphism, editorial project showcases, and verified academic credentials.
 
 ---
 
 ## 🌟 Highlights & Key Sections
 
-### 1. 🧠 Interactive Neuromorphic Canvas Background (`assets/js/neural-bg.js`)
+### 1. 🧠 Interactive Neural Canvas Background (`assets/js/neural-bg.js`)
 - Elegant ambient background simulating biological neurons and axonal synaptic connections reacting smoothly to mouse motion.
 
 ### 2. 🎨 Featured Project Showcase
-- Clean, high-density presentation cards filterable by: `All Projects`, `Neuromorphic AI`, `Biotech & Omics`, `Web & Tools`, and `Data & ML`.
+- Clean, high-density presentation cards filterable by: `All Projects`, `AI & Neural Networks`, `Biotech & Omics`, `Web & Tools`, and `Data & ML`.
 - **Cerebellum Inspired Spiking Neural Network (CISNN)**: Biophysical modeling of sensorimotor perception, LIF differential equations, and parallel NumPy pipelines (Amrita Mind Brain Center).
 - **Industrial Dye Biodegradation & Decolorization**: Screening enzymatic degradation of Malachite Green and Congo Red using *Pseudomonas putida* and *Bacillus subtilis* with 96.8% decolorization efficiency (ASBT).
 - **Basic Model of Blood Flow in Arteries (Virtual Lab)**: Official interactive educational module developed under the Ministry of Education's Virtual Labs initiative ([https://ibe-amrt.vlabs.ac.in/exp/blood-flow-model/simulation.html](https://ibe-amrt.vlabs.ac.in/exp/blood-flow-model/simulation.html)).
@@ -26,7 +26,7 @@ A sleek, modern, high-impact **Personal Portfolio and Dribbble/Behance-style Pro
   - Complete technology stack and domain tools breakdown
 
 ### 4. 🛠️ Comprehensive Technical Arsenal
-- Filtered breakdown across: Programming Languages (Python, R, MATLAB, JavaScript, C++, Bash), Machine Learning & SNNs, Bioinformatics Tools (BLAST, Clustal Omega, Biopython, COBRApy, EMBOSS, PyMOL), Biological Databases (NCBI, Ensembl, UniProt, PDB, KEGG), Full-Stack Web (React, Node, HTML5, CSS3, SQL), and Wet-Lab Techniques (AGE, SDS-PAGE, ELISA, Bacterial Culturing, TLC, GLP).
+- Filtered breakdown across: Programming Languages (Python, R, MATLAB, JavaScript, C++, Bash), Machine Learning & AI, Bioinformatics Tools (BLAST, Clustal Omega, Biopython, COBRApy, EMBOSS, PyMOL), Biological Databases (NCBI, Ensembl, UniProt, PDB, KEGG), Full-Stack Web (React, Node, HTML5, CSS3, SQL), and Wet-Lab Techniques (AGE, SDS-PAGE, ELISA, Bacterial Culturing, TLC, GLP).
 
 ### 5. 🎓 Academic Pathway & Certified Credentials
 - M.Sc. Bioinformatics (2nd Year, Class of 2027) & B.Sc. Microbiology (Amrita Vishwa Vidyapeetham).
