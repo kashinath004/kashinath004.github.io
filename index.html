@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kashinath B R | Portfolio & Behance Showcase | Computational Systems Biology & Neuromorphic AI</title>
+  
+  <!-- Meta SEO & Social Sharing -->
+  <meta name="description" content="Professional Portfolio of Kashinath B R — Computational Systems Biologist & Neuromorphic AI Researcher. Specializing in Spiking Neural Networks, bioinformatics, and full-stack computational modeling.">
+  <meta name="keywords" content="Kashinath B R, Neuromorphic AI, Spiking Neural Networks, Bioinformatics, Computational Biology, SNN, CISNN, Machine Learning, Systems Biology">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#070a12',
+              card: '#0c1222',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              violet: '#8b5cf6',
+              amber: '#f59e0b',
+              slate: '#1e293b'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Chart.js CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-[#070a12] text-slate-100 min-h-screen relative selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- =========================================================================
+       BACKGROUND NEUROMORPHIC CANVAS
+       ========================================================================= -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- Subtle ambient glows -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-1/4 right-1/4 w-[32rem] h-[32rem] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#070a12]/80 border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Logo & Candidate Mark -->
+      <a href="#hero" class="flex items-center gap-3 group shrink-0">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 p-[2px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition">
+          <div class="w-full h-full bg-[#070a12] rounded-[10px] flex items-center justify-center">
+            <span class="font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 text-lg">KB</span>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold tracking-tight text-white text-base">KASHINATH B R</span>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 rounded-full">
+              2nd Year M.Sc. (Class of 2027)
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 font-mono">2nd Year M.Sc. Bioinformatics &bull; Neuromorphic SNNs</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#core-competencies" class="hover:text-cyan-400 transition flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Philosophy
+        </a>
+        <a href="#showcase" class="hover:text-cyan-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+        <a href="#education" class="hover:text-cyan-400 transition">Timeline</a>
+        <a href="#resume" class="hover:text-cyan-400 transition">Resume</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5 shrink-0 ml-auto lg:ml-0">
+        <a href="RESUME.pdf" download="KASHINATH_B_R_RESUME.pdf" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-xs font-mono text-cyan-300 border border-slate-700/80 transition hover:border-cyan-500/40 shadow-sm">
+          <i data-lucide="file-down" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span class="hidden sm:inline">Download</span> <span>PDF</span>
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs font-sans tracking-wide shadow-md shadow-cyan-500/20 transition transform hover:-translate-y-0.5">
+          <span>Contact</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION
+       ========================================================================= -->
+  <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Target Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono mb-8 backdrop-blur-md shadow-lg shadow-cyan-500/10">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-bold text-white tracking-wide">ACADEMIC STANDING:</span> 2nd Year M.Sc. Bioinformatics Student (Class of 2027)
+      </div>
+
+      <div class="max-w-4xl space-y-6">
+        <h1 class="text-4xl sm:text-6xl font-black font-display tracking-tight text-white leading-[1.1]">
+          Engineering <span class="text-gradient-cyan-emerald">Neuromorphic AI</span> & Bio-Computational Systems.
+        </h1>
+        
+        <p class="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
+          <strong class="text-white">2nd-Year M.Sc. Bioinformatics Student</strong> (Graduating May 2027) at <strong class="text-white">Amrita School of Biotechnology</strong> with an academic foundation in Microbiology. Specialist in <strong class="text-cyan-300">biophysical Cerebellar Spiking Neural Networks (CISNN)</strong>, high-performance Python simulation pipelines, and multi-omics data integration.
+        </p>
+
+        <p class="text-sm text-slate-400 max-w-2xl leading-relaxed">
+          Positioned at the intersection of biological neuroscience and deep tech engineering—bringing event-driven energy efficiency, sparse neural algorithms, and data-driven computational methodologies to decipher cellular dynamics and build scalable, intelligent software platforms.
+        </p>
+
+        <!-- Call to action buttons -->
+        <div class="pt-4 flex flex-wrap items-center gap-4">
+          <a href="#showcase" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-xl shadow-cyan-500/25 transition transform hover:-translate-y-0.5">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Explore Featured Projects</span>
+          </a>
+          <a href="RESUME.pdf" download="KASHINATH_B_R_RESUME.pdf" class="px-5 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold text-sm flex items-center gap-2 transition backdrop-blur-md">
+            <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+            <span>Download CV (PDF)</span>
+          </a>
+          <a href="#contact" class="px-5 py-3.5 rounded-xl bg-violet-950/40 hover:bg-violet-900/40 text-violet-300 border border-violet-500/40 font-semibold text-sm flex items-center gap-2 transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Get In Touch</span>
+          </a>
+        </div>
+
+        <!-- Quick Contact Pill Bar -->
+        <div class="pt-6 flex flex-wrap items-center gap-3 text-xs font-mono text-slate-400">
+          <button data-copy="kashibr2004@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-900/70 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition flex items-center gap-1.5">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span>kashibr2004@gmail.com</span>
+          </button>
+          <button data-copy="+91 8075770663" class="px-3 py-1.5 rounded-lg bg-slate-900/70 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition flex items-center gap-1.5">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>+91 8075770663</span>
+          </button>
+          <a href="https://linkedin.com/in/kashinath-b-r-ab7031255" target="_blank" rel="noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900/70 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition flex items-center gap-1.5">
+            <i data-lucide="linkedin" class="w-3.5 h-3.5 text-blue-400"></i>
+            <span>LinkedIn Profile ↗</span>
+          </a>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900/70 border border-slate-800 flex items-center gap-1.5 text-slate-400">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+            <span>Kollam, Kerala, India</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CORE PHILOSOPHY & COMPETENCIES SECTION
+       ========================================================================= -->
+  <section id="core-competencies" class="py-20 relative bg-gradient-to-b from-[#070a12] via-[#0b1020] to-[#070a12] border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider">
+          <i data-lucide="target" class="w-3.5 h-3.5"></i>
+          Interdisciplinary Engineering Philosophy
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+          Bridging Biology, <span class="text-gradient-cyan-emerald">Neuromorphic AI</span> & Scalable Software
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          How biophysical modeling, event-driven neural architectures, and computational systems biology converge to create ultra-efficient, next-generation computational platforms.
+        </p>
+      </div>
+
+      <!-- 4 Core Value Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="glass-panel rounded-2xl p-6 glass-panel-hover border border-white/10 relative group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5 group-hover:scale-110 transition">
+            <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white mb-2">Neuromorphic & SNN Architecture</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Conventional deep learning is compute-heavy and power-hungry. My work with Cerebellar Spiking Neural Networks brings biologically plausible, sparse, event-driven temporal modeling to enable ultra-low-latency edge AI and streaming sensor intelligence.
+          </p>
+          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-cyan-400 flex items-center gap-1">
+            <span>Event-Driven Computing</span>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-panel rounded-2xl p-6 glass-panel-hover border border-white/10 relative group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5 group-hover:scale-110 transition">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white mb-2">High-Dimensional Data Pipelines</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Managing massive biological repositories (NCBI GEO, Ensembl, UniProt, PDB, KEGG) requires high-throughput data extraction, normalization, and parallel execution pipelines—skills directly portable to enterprise data platforms and distributed ETL.
+          </p>
+          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-emerald-400 flex items-center gap-1">
+            <span>High-Throughput ETL</span>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-panel rounded-2xl p-6 glass-panel-hover border border-white/10 relative group">
+          <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400 mb-5 group-hover:scale-110 transition">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white mb-2">Full-Stack Prototyping & Tools</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Engineered interactive web modules for the Amrita Mind Brain Center using pure JS, Canvas, HTML5, React, and Node.js. Passionate about building interactive developer tools, visual discovery platforms, and simulation environments.
+          </p>
+          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-violet-400 flex items-center gap-1">
+            <span>Interactive Web Engineering</span>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="glass-panel rounded-2xl p-6 glass-panel-hover border border-white/10 relative group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-5 group-hover:scale-110 transition">
+            <i data-lucide="microscope" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white mb-2">Scientific Rigor & ML Benchmarking</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Dual training in wet-lab experimental microbiology and dry-lab computational modeling. Experienced in benchmarking multiple AI paradigms (CNN, LSTM, MLP, SVM, SOM, SNN) and structuring enterprise analytics roadmaps (Tata GenAI simulation).
+          </p>
+          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-amber-400 flex items-center gap-1">
+            <span>Rigorous Methodology</span>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Professional Collaboration Banner -->
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-r from-cyan-950/40 via-slate-900 to-indigo-950/40 border border-cyan-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Open for Engineering & Research Opportunities
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-display text-white">Let's build next-generation intelligent systems together.</h3>
+          <p class="text-slate-400 text-sm max-w-2xl">Available for research collaborations, AI engineering roles, and technical discussions on neuromorphic architectures.</p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <button data-copy="kashibr2004@gmail.com" class="px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition">
+            Email Me Directly
+          </button>
+          <a href="#contact" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs border border-slate-700 transition">
+            Send Message
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BEHANCE & DRIBBBLE FEATURED SHOWCASE
+       ========================================================================= -->
+  <section id="showcase" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title & Filter Nav -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-3">
+            <i data-lucide="palette" class="w-3.5 h-3.5"></i> Behance & Dribbble Portfolio
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+            Featured Case Studies
+          </h2>
+          <p class="text-slate-400 text-sm mt-2">Curated projects showcasing end-to-end design, modeling, algorithmic parallelization, and experimental biology.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900/80 border border-white/10 backdrop-blur-md">
+          <button class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-medium transition bg-cyan-500 text-slate-950 font-bold" data-filter="all">All Projects</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white transition" data-filter="neuromorphic">Neuromorphic AI</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white transition" data-filter="bio">Biotech & Omics</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white transition" data-filter="web">Web & Tools</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white transition" data-filter="ml">Data & ML</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: CISNN Spiking Neural Network -->
+        <div class="project-card flex flex-col dribbble-frame group" data-category="neuromorphic ml">
+          <!-- Card Header Image Mockup -->
+          <div class="h-60 relative overflow-hidden bg-gradient-to-br from-cyan-950 via-slate-900 to-indigo-950 p-6 flex flex-col justify-between">
+            <div class="flex justify-between items-start z-10">
+              <span class="badge-tag bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                <i data-lucide="cpu" class="w-3 h-3"></i> NEUROMORPHIC SNN
+              </span>
+              <span class="px-2.5 py-1 rounded bg-black/60 text-slate-300 text-[11px] font-mono border border-white/10">AMBC</span>
+            </div>
+
+            <!-- Visual Neural Mesh Graphic -->
+            <div class="my-auto text-center z-10">
+              <div class="inline-block p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 group-hover:scale-105 transition duration-300">
+                <i data-lucide="network" class="w-14 h-14 text-cyan-400 animate-pulse"></i>
+              </div>
+              <div class="text-[11px] font-mono text-cyan-300/80 mt-2">CEREBELLAR MICROCIRCUIT ENGINE</div>
+            </div>
+
+            <div class="flex justify-between items-center text-xs font-mono text-slate-400 z-10">
+              <span>MATLAB &bull; Python &bull; LIF</span>
+              <span class="text-emerald-400 font-bold">35x Efficiency</span>
+            </div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-6 flex-1 flex flex-col justify-between bg-slate-900/90 border-t border-white/10">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-cyan-400 transition">
+                Cerebellum Inspired Spiking Neural Network (CISNN)
+              </h3>
+              <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                Biophysical neuronal modeling of sensory-motor perception. Built parallel execution pipelines and benchmarked against CNN, LSTM, MLP, SOM, and SVM.
+              </p>
+              
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-cyan-300">MATLAB</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-cyan-300">Python</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-cyan-300">NumPy</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-cyan-300">Parallel Execution</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <button data-open-case="cisnn" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition">
+                <span>View Case Study</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+              <span class="text-xs font-mono text-cyan-400/90 flex items-center gap-1">
+                <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>AMBC Research</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Bioremediation of Industrial Dyes -->
+        <div class="project-card flex flex-col dribbble-frame group" data-category="bio ml">
+          <!-- Card Header Image Mockup -->
+          <div class="h-60 relative overflow-hidden bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 p-6 flex flex-col justify-between">
+            <div class="flex justify-between items-start z-10">
+              <span class="badge-tag bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                <i data-lucide="flask-conical" class="w-3 h-3"></i> ENVIRONMENTAL BIOTECH
+              </span>
+              <span class="px-2.5 py-1 rounded bg-black/60 text-slate-300 text-[11px] font-mono border border-white/10">ASBT</span>
+            </div>
+
+            <div class="my-auto text-center z-10">
+              <div class="inline-block p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 group-hover:scale-105 transition duration-300">
+                <i data-lucide="dna" class="w-14 h-14 text-emerald-400"></i>
+              </div>
+              <div class="text-[11px] font-mono text-emerald-300/80 mt-2">P. PUTIDA &bull; B. SUBTILIS</div>
+            </div>
+
+            <div class="flex justify-between items-center text-xs font-mono text-slate-400 z-10">
+              <span>Malachite Green &bull; Congo Red</span>
+              <span class="text-emerald-400 font-bold">96.8% Clearance</span>
+            </div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-6 flex-1 flex flex-col justify-between bg-slate-900/90 border-t border-white/10">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-emerald-400 transition">
+                Industrial Dye Biodegradation & Decolorization
+              </h3>
+              <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                Screened and quantified enzymatic degradation kinetics of toxic industrial dyes using bacterial isolates with UV-Vis spectrophotometry and metabolic assays.
+              </p>
+              
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-emerald-300">Bioremediation</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-emerald-300">Enzyme Kinetics</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-emerald-300">Microbial Isolation</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <button data-open-case="bioremediation" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition">
+                <span>View Case Study</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+              <span class="text-xs font-mono text-emerald-400/90 flex items-center gap-1">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>96.8% Max Degradation</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Basic Model of Blood Flow in Arteries (Amrita Virtual Lab) -->
+        <div class="project-card flex flex-col dribbble-frame group" data-category="web bio">
+          <!-- Card Header Image Mockup -->
+          <div class="h-60 relative overflow-hidden bg-gradient-to-br from-rose-950 via-slate-900 to-indigo-950 p-6 flex flex-col justify-between">
+            <div class="flex justify-between items-start z-10">
+              <span class="badge-tag bg-rose-500/20 text-rose-300 border border-rose-500/40">
+                <i data-lucide="heart-pulse" class="w-3 h-3"></i> HEMODYNAMICS & VIRTUAL LAB
+              </span>
+              <span class="px-2.5 py-1 rounded bg-black/60 text-slate-300 text-[11px] font-mono border border-white/10">AMBC &bull; MOE VLABS</span>
+            </div>
+
+            <div class="my-auto text-center z-10">
+              <div class="inline-block p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 group-hover:scale-105 transition duration-300">
+                <i data-lucide="activity" class="w-14 h-14 text-rose-400"></i>
+              </div>
+              <div class="text-[11px] font-mono text-rose-300/80 mt-2">BASIC MODEL OF BLOOD FLOW IN ARTERIES</div>
+            </div>
+
+            <div class="flex justify-between items-center text-xs font-mono text-slate-400 z-10">
+              <span>HTML5 &bull; CSS3 &bull; JS &bull; Chart.js</span>
+              <a href="https://ibe-amrt.vlabs.ac.in/exp/blood-flow-model/simulation.html" target="_blank" class="text-cyan-400 font-bold flex items-center gap-1 hover:underline">
+                <span>Live on vlabs.ac.in</span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-6 flex-1 flex flex-col justify-between bg-slate-900/90 border-t border-white/10">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-rose-400 transition">
+                Basic Model of Blood Flow in Arteries (Virtual Lab)
+              </h3>
+              <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                Official interactive simulation developed for the Introduction to Biomedical Engineering Instrumentation Virtual Lab. Simulates blood flow resistance, velocity profiles, and plaque progression across 4 atherosclerosis stages.
+              </p>
+              
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-rose-300">JavaScript</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-rose-300">HTML5 / CSS3</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-rose-300">Chart.js</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-rose-300">Hemodynamics</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <button data-open-case="biomedical" class="text-xs font-bold text-rose-400 hover:text-rose-300 flex items-center gap-1 transition">
+                <span>View Case Study</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+              <a href="https://ibe-amrt.vlabs.ac.in/exp/blood-flow-model/simulation.html" target="_blank" rel="noreferrer" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-bold">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                <span>Open Live Virtual Lab</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Tata GenAI Powered Analytics -->
+        <div class="project-card flex flex-col dribbble-frame group" data-category="ml">
+          <div class="h-60 relative overflow-hidden bg-gradient-to-br from-amber-950 via-slate-900 to-rose-950 p-6 flex flex-col justify-between">
+            <div class="flex justify-between items-start z-10">
+              <span class="badge-tag bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                <i data-lucide="sparkles" class="w-3 h-3"></i> GENAI & DATA ANALYTICS
+              </span>
+              <span class="px-2.5 py-1 rounded bg-black/60 text-slate-300 text-[11px] font-mono border border-white/10">FORAGE</span>
+            </div>
+
+            <div class="my-auto text-center z-10">
+              <div class="inline-block p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 group-hover:scale-105 transition duration-300">
+                <i data-lucide="pie-chart" class="w-14 h-14 text-amber-400"></i>
+              </div>
+              <div class="text-[11px] font-mono text-amber-300/80 mt-2">PREDICTIVE RISK & AI STRATEGY</div>
+            </div>
+
+            <div class="flex justify-between items-center text-xs font-mono text-slate-400 z-10">
+              <span>EDA &bull; Risk Modeling &bull; Strategy</span>
+              <span class="text-amber-400 font-bold">Tata Certified</span>
+            </div>
+          </div>
+
+          <div class="p-6 flex-1 flex flex-col justify-between bg-slate-900/90 border-t border-white/10">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-amber-400 transition">
+                Tata GenAI Data Analytics & Risk Modeling
+              </h3>
+              <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                Conducted exploratory data analysis, business scenario modeling, and structured generative AI roadmaps for enterprise risk mitigation.
+              </p>
+              
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-amber-300">Python</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-amber-300">EDA</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-amber-300">GenAI Strategy</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <button data-open-case="tataGenai" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 transition">
+                <span>View Case Study</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Data Structures and OOP with C++ -->
+        <div class="project-card flex flex-col dribbble-frame group" data-category="ml all">
+          <div class="h-60 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 p-6 flex flex-col justify-between">
+            <div class="flex justify-between items-start z-10">
+              <span class="badge-tag bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                <i data-lucide="binary" class="w-3 h-3"></i> SYSTEMS & ALGORITHMS
+              </span>
+              <span class="px-2.5 py-1 rounded bg-black/60 text-slate-300 text-[11px] font-mono border border-white/10">UDEMY MASTERCLASS</span>
+            </div>
+
+            <div class="my-auto text-center z-10">
+              <div class="inline-block p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 group-hover:scale-105 transition duration-300">
+                <i data-lucide="code-2" class="w-14 h-14 text-cyan-400"></i>
+              </div>
+              <div class="text-[11px] font-mono text-cyan-300/80 mt-2">C++ CS104 & CS105 ARCHITECTURE</div>
+            </div>
+
+            <div class="flex justify-between items-center text-xs font-mono text-slate-400 z-10">
+              <span>OOP &bull; Pointers &bull; Memory</span>
+              <span class="text-emerald-400 font-bold">Certified</span>
+            </div>
+          </div>
+
+          <div class="p-6 flex-1 flex flex-col justify-between bg-slate-900/90 border-t border-white/10">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-cyan-400 transition">
+                Data Structures & OOP in C++ (CS104 & CS105)
+              </h3>
+              <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                Engineered memory-efficient data structures, pointers, dynamic memory management, and algorithmic complexity optimizations in modern C++.
+              </p>
+              
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-cyan-300">C++</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-cyan-300">Data Structures</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-cyan-300">Memory Mgmt</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <button data-open-case="cppAlgorithms" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition">
+                <span>View Case Study</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TECHNICAL SKILLS & COMPETENCY ARSENAL
+       ========================================================================= -->
+  <section id="skills" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider">
+          <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Comprehensive Stack
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+          Technical Skills & Arsenal
+        </h2>
+        <p class="text-slate-400 text-base">
+          Extracted directly from verified academic and practical laboratory achievements.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Category 1: Languages -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-500/40 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <i data-lucide="code" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold font-display text-white">Programming Languages</h3>
+              <p class="text-xs text-slate-400 font-mono">Scripting & High Performance</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 font-semibold">Python</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 font-semibold">MATLAB</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 font-semibold">R Language</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 font-semibold">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 font-semibold">C++ (CS104/105)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 font-semibold">Bash / Shell</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Machine Learning & Neuromorphic AI -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-emerald-500/40 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold font-display text-white">ML & Neuromorphic AI</h3>
+              <p class="text-xs text-slate-400 font-mono">Algorithms & Models</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300 font-semibold">Spiking Neural Networks (SNNs)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300 font-semibold">CISNN Modeling</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300 font-semibold">Scikit-Learn</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300 font-semibold">NumPy & Pandas</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300 font-semibold">CNN, LSTM, MLP</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300 font-semibold">SOM & SVM</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300 font-semibold">Matplotlib & Seaborn</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Bioinformatics & Computational Biology -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-violet-500/40 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-violet-500/10 text-violet-400 border border-violet-500/20">
+              <i data-lucide="dna" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold font-display text-white">Bioinformatics Tools</h3>
+              <p class="text-xs text-slate-400 font-mono">Sequence Alignment & Systems Workflows</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300 font-semibold">BLAST (BLASTn, BLASTp)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300 font-semibold">Clustal Omega</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300 font-semibold">Biopython</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300 font-semibold">COBRApy</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300 font-semibold">EMBOSS Suite</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300 font-semibold">PyMOL</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Biological Databases -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-blue-500/40 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold font-display text-white">Biological Databases</h3>
+              <p class="text-xs text-slate-400 font-mono">Omics & Genomic Repositories</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-semibold">NCBI (GenBank, GEO, BLAST)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-semibold">Ensembl</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-semibold">UniProt</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-semibold">Protein Data Bank (PDB)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-semibold">KEGG Pathway Database</span>
+          </div>
+        </div>
+
+        <!-- Category 5: Web Technologies & Databases -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-amber-500/40 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              <i data-lucide="layout" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold font-display text-white">Web & Full-Stack</h3>
+              <p class="text-xs text-slate-400 font-mono">Frontend, Backend & Storage</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300 font-semibold">React.js</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300 font-semibold">Node.js</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300 font-semibold">HTML5 & CSS3</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300 font-semibold">PostgreSQL</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300 font-semibold">MySQL</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300 font-semibold">Git & GitHub</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300 font-semibold">Linux/Unix Environments</span>
+          </div>
+        </div>
+
+        <!-- Category 6: Wet-Lab Techniques -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-rose-500/40 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20">
+              <i data-lucide="test-tube" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold font-display text-white">Laboratory Wet-Lab</h3>
+              <p class="text-xs text-slate-400 font-mono">Experimental Biology</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-rose-300 font-semibold">Agarose Gel Electrophoresis (AGE)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-rose-300 font-semibold">SDS-PAGE</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-rose-300 font-semibold">ELISA</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-rose-300 font-semibold">Bacterial Culturing & Isolation</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-rose-300 font-semibold">Gram Staining</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-rose-300 font-semibold">Thin Layer Chromatography (TLC)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-rose-300 font-semibold">Good Laboratory Practice (GLP)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       EDUCATION, INTERNSHIPS & CERTIFICATIONS TIMELINE
+       ========================================================================= -->
+  <section id="education" class="py-24 relative bg-[#090e1c] border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i> Academic & Professional Pathway
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+          Education & Credentials
+        </h2>
+        <p class="text-slate-400 text-base">
+          Proven academic excellence and specialized computational certifications.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Column 1: Academic Degrees -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold font-display text-white flex items-center gap-2 mb-6">
+            <i data-lucide="book-open" class="w-5 h-5 text-cyan-400"></i> Degrees & Academic Foundation
+          </h3>
+
+          <!-- Degree 1: M.Sc. -->
+          <div class="glass-panel rounded-2xl p-6 border border-cyan-500/30 relative">
+            <div class="flex items-center gap-2 flex-wrap mb-2">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 text-xs font-mono font-bold">Jul 2025 – May 2027</span>
+              <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold border border-emerald-500/30">Currently in 2nd Year (Final Year)</span>
+            </div>
+            <h4 class="text-lg font-bold text-white mt-1">Master of Science (M.Sc.) in Bioinformatics</h4>
+            <p class="text-sm text-cyan-400 font-mono">Amrita School of Biotechnology, Amrita Vishwa Vidyapeetham, Amritapuri</p>
+            <p class="text-xs text-slate-300 mt-3 leading-relaxed">
+              Focusing on computational systems biology, multi-omics data integration, biophysical neuromorphic modeling, and cellular network dynamics. Currently executing 2nd-year thesis research.
+            </p>
+          </div>
+
+          <!-- Degree 2: B.Sc. -->
+          <div class="glass-panel rounded-2xl p-6 border border-emerald-500/30 relative">
+            <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold">Sep 2022 – Jun 2025</span>
+            <h4 class="text-lg font-bold text-white mt-2">Bachelor of Science (B.Sc.) in Microbiology</h4>
+            <p class="text-sm text-emerald-400 font-mono">Amrita School of Biotechnology, Amrita Vishwa Vidyapeetham, Amritapuri</p>
+            <p class="text-xs text-slate-300 mt-3 leading-relaxed">
+              Solid wet-lab microbiology foundations: bacterial isolation, enzymatic assays, molecular biology techniques (AGE, SDS-PAGE, ELISA), and microbial biodegradation.
+            </p>
+          </div>
+
+          <!-- Schooling -->
+          <div class="glass-panel rounded-2xl p-6 border border-slate-800 relative">
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono font-bold">Jul 2021 – May 2022</span>
+            <h4 class="text-base font-bold text-white mt-2">Higher Secondary Examination (Class XII, CBSE)</h4>
+            <p class="text-sm text-slate-400 font-mono">Chinmaya Vidyalaya, Chandanathope, Kollam</p>
+          </div>
+        </div>
+
+        <!-- Column 2: Internships & Certifications -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold font-display text-white flex items-center gap-2 mb-6">
+            <i data-lucide="award" class="w-5 h-5 text-emerald-400"></i> Internships & Certifications
+          </h3>
+
+          <div class="space-y-4">
+            
+            <!-- Item 1 -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-white/10 flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-white">CISNN Modeling Internship</h4>
+                  <span class="text-[11px] font-mono text-cyan-400">Jan 2025 – Jun 2025</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5">Amrita Mind Brain Center (AMBC)</p>
+                <p class="text-xs text-slate-300 mt-1">Modeling Cerebellar Perception for Sensorimotor Tasks using MATLAB & Python.</p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-white/10 flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-white">Virtual Lab Internship: Blood Flow in Arteries</h4>
+                  <span class="text-[11px] font-mono text-emerald-400">Jan 2026 – Apr 2026</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5">Amrita Mind Brain Center (AMBC) • Ministry of Education Virtual Labs</p>
+                <p class="text-xs text-slate-300 mt-1">Developed the official interactive "Basic Model of Blood Flow in Arteries" module using HTML, CSS, JavaScript, and Chart.js.</p>
+                <a href="https://ibe-amrt.vlabs.ac.in/exp/blood-flow-model/simulation.html" target="_blank" rel="noreferrer" class="text-[11px] font-mono text-cyan-400 hover:underline mt-1.5 inline-flex items-center gap-1">
+                  <span>View Live Experiment (ibe-amrt.vlabs.ac.in)</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-white/10 flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-violet-500/10 text-violet-400 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-white">Python (Basic) Skill Certification</h4>
+                  <span class="text-[11px] font-mono text-violet-400">Aug 2026</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5">HackerRank &bull; Certificate ID: <span class="font-mono text-cyan-400 font-bold">085729E37AC5</span></p>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-white/10 flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-amber-500/10 text-amber-400 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-white">Tata GenAI Powered Data Analytics Job Simulation</h4>
+                  <span class="text-[11px] font-mono text-amber-400">Jun 2025</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5">Forage</p>
+                <p class="text-xs text-slate-300 mt-1">Exploratory Data Analysis, Risk Modeling, AI Strategy, and business value realization.</p>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-white/10 flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-blue-500/10 text-blue-400 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-white">Data Structures and OOP with C++ (CS104 & CS105)</h4>
+                  <span class="text-[11px] font-mono text-blue-400">Oct 2024</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5">Udemy Masterclass</p>
+                <p class="text-xs text-slate-300 mt-1">Advanced object-oriented programming, memory management, and algorithmic complexity.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       RESUME VIEWER & DIRECT DOWNLOAD
+       ========================================================================= -->
+  <section id="resume" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-cyan-500/30 relative overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 border-b border-white/10 pb-8 mb-8">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-2">
+              <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Verified Curriculum Vitae
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black font-display text-white">
+              Resume: Kashinath B R
+            </h2>
+            <p class="text-slate-400 text-sm mt-1">
+              Curriculum vitae covering bioinformatics research, neuromorphic engineering, and wet-lab techniques.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="RESUME.pdf" download="KASHINATH_B_R_RESUME.pdf" class="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download Official Resume (PDF)</span>
+            </a>
+            <a href="RESUME.pdf" target="_blank" class="px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-white/10 flex items-center gap-2 transition">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Open in New Tab</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Embedded CV Summary Matrix -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+          
+          <div class="p-5 rounded-2xl bg-slate-900/80 border border-white/5 space-y-3">
+            <h4 class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="user" class="w-3.5 h-3.5"></i> Identity & Contact
+            </h4>
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <p><strong class="text-white">Name:</strong> Kashinath B R</p>
+              <p><strong class="text-white">Email:</strong> kashibr2004@gmail.com</p>
+              <p><strong class="text-white">Phone:</strong> +91 8075770663</p>
+              <p><strong class="text-white">Location:</strong> Kollam, Kerala, India – 691014</p>
+              <p><strong class="text-white">Languages:</strong> English, Malayalam</p>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-900/80 border border-white/5 space-y-3">
+            <h4 class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="book-marked" class="w-3.5 h-3.5"></i> Academic Credentials
+            </h4>
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <p><strong class="text-white">M.Sc.:</strong> Bioinformatics (2nd Year, 2025–2027), Amrita</p>
+              <p><strong class="text-white">B.Sc.:</strong> Microbiology (2022–2025), Amrita</p>
+              <p><strong class="text-white">Class XII:</strong> Chinmaya Vidyalaya (CBSE, 2022)</p>
+              <p><strong class="text-white">HackerRank:</strong> Python (Basic) 085729E37AC5</p>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-900/80 border border-white/5 space-y-3">
+            <h4 class="font-mono text-xs text-violet-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Research Domains
+            </h4>
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <p>• Computational Systems Biology</p>
+              <p>• Spiking Neural Networks (SNNs)</p>
+              <p>• Multi-Omics Data Integration</p>
+              <p>• Machine Learning in Biomedicine</p>
+              <p>• Gene Regulatory & Cellular Dynamics</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CONTACT & GET IN TOUCH SECTION
+       ========================================================================= -->
+  <section id="contact" class="py-24 relative bg-[#090e1c] border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Professional Contact -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i> Connect with Kashinath
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+            Let's discuss <span class="text-gradient-cyan-emerald">research & opportunities</span>.
+          </h2>
+
+          <p class="text-slate-300 text-base leading-relaxed">
+            I am always eager to collaborate on computational biology, neuromorphic spiking networks, high-throughput data processing, and full-stack software development. Feel free to reach out directly through any of the channels below.
+          </p>
+
+          <!-- Direct Channels -->
+          <div class="space-y-3 pt-2">
+            <a href="mailto:kashibr2004@gmail.com?subject=Inquiry%20/%20Collaboration%20-%20Kashinath%20B%20R" class="p-4 rounded-xl bg-slate-900/90 border border-white/10 hover:border-cyan-500/50 flex items-center justify-between group transition">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover:scale-110 transition">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-mono">Email Address</div>
+                  <div class="text-sm font-bold text-white group-hover:text-cyan-300 transition">kashibr2004@gmail.com</div>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition"></i>
+            </a>
+
+            <a href="tel:+918075770663" class="p-4 rounded-xl bg-slate-900/90 border border-white/10 hover:border-emerald-500/50 flex items-center justify-between group transition">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-mono">Phone / WhatsApp</div>
+                  <div class="text-sm font-bold text-white group-hover:text-emerald-300 transition">+91 8075770663</div>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/kashinath-b-r-ab7031255" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-900/90 border border-white/10 hover:border-blue-500/50 flex items-center justify-between group transition">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400 group-hover:scale-110 transition">
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-mono">LinkedIn Profile</div>
+                  <div class="text-sm font-bold text-white group-hover:text-blue-300 transition">linkedin.com/in/kashinath-b-r-ab7031255</div>
+                </div>
+              </div>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Direct Message Form -->
+        <div class="lg:col-span-6">
+          <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-cyan-500/30 shadow-2xl">
+            <h3 class="text-xl font-bold font-display text-white mb-2">Send a Message</h3>
+            <p class="text-xs text-slate-400 mb-6">Reach out directly for research discussions, engineering projects, or opportunities.</p>
+
+            <form onsubmit="event.preventDefault(); showToast('Message client opening...'); window.location.href='mailto:kashibr2004@gmail.com?subject=Inquiry%20for%20Kashinath%20B%20R&body=Hi%20Kashinath,%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect%20regarding%20an%20opportunity%20or%20collaboration.';" class="space-y-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Your Name</label>
+                <input type="text" placeholder="e.g. Dr. Alex Mercer / Sarah Jenkins" class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-400 font-sans">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Organization / Affiliation</label>
+                <input type="text" placeholder="e.g. Research Lab, University, or Company" class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-400 font-sans">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Message</label>
+                <textarea rows="4" class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-sm text-slate-300 focus:outline-none focus:border-cyan-400 font-sans" placeholder="Hi Kashinath, I reviewed your work on cerebellar spiking neural networks and would like to discuss an opportunity..."></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 transition transform hover:-translate-y-0.5">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="py-10 border-t border-white/10 bg-[#05070d] text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-bold text-white">KASHINATH B R</span>
+        <span>• Computational Systems Biologist & Neuromorphic AI Researcher</span>
+      </div>
+
+      <div class="flex items-center gap-6 font-mono text-[11px]">
+        <a href="#hero" class="hover:text-cyan-400 transition">Back to Top ↑</a>
+        <a href="#showcase" class="hover:text-cyan-400 transition">Featured Projects</a>
+        <a href="RESUME.pdf" download class="hover:text-cyan-400 transition">Download CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       DYNAMIC BEHANCE CASE STUDY MODAL
+       ========================================================================= -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop overflow-y-auto">
+    <div class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#0b1020] border border-cyan-500/40 p-6 sm:p-8 shadow-2xl">
+      <!-- Close Button -->
+      <button id="modal-close-btn" class="absolute top-6 right-6 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Dynamic Content Injection -->
+      <div id="modal-dynamic-content"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div id="toast-msg" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs font-mono shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
+    Copied!
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/neural-bg.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
